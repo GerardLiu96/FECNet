@@ -172,7 +172,7 @@ class get_img(Thread):
                 print(key)
                 response = urllib.request.urlopen(req)
                 data = response.read()
-                name = "train/" + key.split('/')[-1]
+                name = "data/train/" + key.split('/')[-1]
                 f = open(name, 'wb')
                 f.write(data)
                 f.close()
