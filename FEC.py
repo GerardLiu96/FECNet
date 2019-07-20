@@ -165,7 +165,7 @@ def create_model():
     x = Dropout(0.5)(x)
     x = Dense(16)(x)
     #x = K.l2_normalize(x)
-    x = Lambda(lambda x: l2_norm(x))(x)
+    x = Lambda(lambda x: K.l2_normalize(x,axis=1))(x)
 
     return x, img_input
 
@@ -212,7 +212,7 @@ def load_triplet_images(csvpath,target_size):
     Xtrain = np.array(trainX)
     Xtrain = Xtrain.reshape(Xtrain.shape[0], 224, 224, 3)
     print(Xtrain.shape)
-    Ytrain = np.zeros(shape=(Xtrain.shape[0],1,1))
+    Ytrain = np.zeros(shape=(Xtrain.shape[0],1,1,1))
     return Xtrain,Ytrain
 
 
