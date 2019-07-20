@@ -165,7 +165,7 @@ def create_model():
     x = Dropout(0.5)(x)
     x = Dense(16)(x)
     #x = K.l2_normalize(x)
-    x = Lambda(lambda x: l2_norm(x))(x)
+    x = Lambda(lambda x: K.l2_normalize(x))(x)
 
     return x, img_input
 
