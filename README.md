@@ -34,8 +34,9 @@ Run the image_extract.py frist, then run the export_train_label
 
 ## Step three
 Run the FEC.py to train a model, or you can use the create_model method in you own training code. Like in Classifi2.py.
-
-
+//
+**If your device is limite (like me), I suggest you set a very small learning rate (less than 0.0005) because the model will be very easy to overfit.**
+//
 
 
 I think there may have some problem in triplet loss part or read triplet images part, if you find it, please tell me, thanks.
