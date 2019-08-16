@@ -117,7 +117,9 @@ def triplet_loss(y_true, y_pred):
     #dis_neg = K.sqrt(dis_neg)
     a1pha = 0.2
     d1 = K.maximum(0.0,(dis_pos-dis_neg)+a1pha)
-    return K.mean(d1)
+    d2 = K.maximum(0.0,(dis_pos-dis_neg)+alpha) 
+    d = K.sum(d1,d2)
+    return K.mean(d)
 
 
 
