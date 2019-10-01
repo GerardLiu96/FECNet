@@ -21,8 +21,7 @@ Due to the limitation of device, I didn't train the model with whole FEC dataset
 
 
 
-Dataset link: [FEC](https://ai.google/tools/
-datasets/google-facial-expression/.)
+Dataset link: [FEC](https://ai.google/tools/datasets/google-facial-expression/.)
 
 
 ## Step one
@@ -38,6 +37,9 @@ Run the FEC.py to train a model, or you can use the create_model method in you o
   
   
 **If your device is limite (like me), I suggest you set a very small learning rate (less than 0.0005) because the model will be very easy to overfit.**
+
+-------------------------------------------------------------------------------------------------------------
+**Update** I'm not sure why I still couldn't get good result as the original paper. Maybe because the device limitation so that I could only set a small batch size. If anyone find the bug in my code, plz create a pull request.
   
   
 
