@@ -44,8 +44,6 @@ Run the FEC.py to train a model, or you can use the create_model method in you o
   
 
 
-I think there may have some problem in triplet loss part or read triplet images part, if you find it, please tell me, thanks.
-
 
 
 If you like this project, offer me a star!
