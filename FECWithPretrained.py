@@ -113,11 +113,12 @@ def triplet_loss(y_true, y_pred):
     neg1 = y_pred[batch+batch:3*batch,:]
     dis_pos = K.sum(K.square(ref1 - pos1), axis=1, keepdims=True)
     dis_neg = K.sum(K.square(ref1 - neg1), axis=1, keepdims=True)
+    dis_pneg = K.sum(K.square(pos1 - neg1), axis=1, keepdims=True)
     #dis_pos = K.sqrt(dis_pos)
     #dis_neg = K.sqrt(dis_neg)
     a1pha = 0.2
     d1 = K.maximum(0.0,(dis_pos-dis_neg)+a1pha)
-    d2 = K.maximum(0.0,(dis_pos-dis_neg)+a1pha) 
+    d2 = K.maximum(0.0,(dis_pos-dis_pneg)+a1pha) 
     d = d1 + d2
     return K.mean(d)
 
